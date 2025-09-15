@@ -7,42 +7,63 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
+    android:padding="16dp"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Lista de Tareas"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        />
-
+    <!-- Campo Título -->
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="148dp"
-        android:layout_height="78dp" />
+        android:id="@+id/textInputLayoutTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Título de la tarea"
+        app:counterEnabled="true"
+        app:counterMaxLength="50"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="15dp"
+        >
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:layout_width="277dp"
-        android:layout_height="wrap_content" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextTitulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-   <Switch
-       android:text="Urgente"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:layout_marginTop="10dp"
-       android:layout_marginBottom="10dp"
-/>
-
-    <Button
-        android:id="@+id/btnBotonStd"
+    <!-- Switch Urgente -->
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/switchUrgente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Guardar"
+        android:text="¿Es urgente?" />
+
+    <!-- Spinner Estado -->
+    <Spinner
+        android:id="@+id/spinnerEstado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:layout_margin="15dp"
+        android:layout_marginBottom="50dp"
+            />
+
+    <!-- Botones -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnGuardar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Guardar tarea"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
         />
-</LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCancelar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cancelar"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+         />
 
 </LinearLayout>
